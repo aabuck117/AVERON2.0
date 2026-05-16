@@ -1,21 +1,8 @@
 import { motion } from "motion/react";
-import React, { useState } from "react";
+import React from "react";
 import { Mail, Crosshair, ArrowRight } from "lucide-react";
 
 export function CTA() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
-  };
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden flex items-center justify-center">
@@ -101,7 +88,11 @@ export function CTA() {
                 <p className="font-mono text-xs text-brand-gray tracking-widest uppercase">We will contact you shortly.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+  action="https://tally.so/r/VLbl6M" 
+  method="POST" 
+  className="space-y-6"
+>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Full Name</label>
