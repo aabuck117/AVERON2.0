@@ -12,7 +12,7 @@ export function CTA() {
 
   const formData = new FormData(e.currentTarget);
 
-  await fetch(https://tally.so/r/VLbl6M", {
+  await fetch("https://tally.so/r/VLbl6M", {
     method: "POST",
     body: formData,
     mode: "no-cors",
