@@ -147,7 +147,7 @@ export function CTA() {
 
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Current Objective</label>
-                  <select required className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm appearance-none">
+                 <select required name="Current Objective" className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm appearance-none">
                     <option value="" className="bg-brand-black text-brand-gray">Select Objective</option>
                     <option value="website" className="bg-brand-black">Website Overhaul</option>
                     <option value="leads" className="bg-brand-black">Scale Lead Generation</option>
