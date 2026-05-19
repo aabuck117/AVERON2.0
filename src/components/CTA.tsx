@@ -114,9 +114,10 @@ export function CTA() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Full Name</label>
-                    <input 
-                      required 
-                      type="text" 
+                   <input 
+  required 
+  name="Full Name"
+  type="text" 
                       className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                       placeholder="JOHN DOE"
                     />
@@ -124,8 +125,9 @@ export function CTA() {
                   <div className="space-y-2">
                     <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Company</label>
                     <input 
-                      required 
-                      type="text" 
+  required 
+  name="Company"
+  type="text" 
                       className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                       placeholder="ACME CORP"
                     />
@@ -134,9 +136,10 @@ export function CTA() {
 
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Business Email</label>
-                  <input 
-                    required 
-                    type="email" 
+                <input 
+  required 
+  name="Business Email"
+  type="email" 
                     className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                     placeholder="john@example.com"
                   />
