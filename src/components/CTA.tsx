@@ -155,7 +155,18 @@ export function CTA() {
                     <option value="other" className="bg-brand-black">Other</option>
                   </select>
                 </div>
+<div className="space-y-2">
+  <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">
+    Additional Information
+  </label>
 
+  <textarea
+    name="Additional Information"
+    rows={4}
+    className="w-full bg-transparent border border-brand-line px-4 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm resize-none"
+    placeholder="Tell us more about your business, goals, current problems, etc."
+  />
+</div>
                 <div className="pt-4">
                   <button 
                     disabled={isSubmitting}
