@@ -6,16 +6,25 @@ export function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
-  };
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  const formData = new FormData(e.currentTarget);
+
+  await fetch(https://tally.so/r/VLbl6M", {
+    method: "POST",
+    body: formData,
+    mode: "no-cors",
+  });
+
+  setIsSubmitting(false);
+  setIsSuccess(true);
+
+  setTimeout(() => {
+    setIsSuccess(false);
+  }, 5000);
+};
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden flex items-center justify-center">
