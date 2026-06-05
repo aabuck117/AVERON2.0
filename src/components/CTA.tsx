@@ -152,6 +152,8 @@ export function CTA() {
                     <option value="website" className="bg-brand-black">Website Overhaul</option>
                     <option value="leads" className="bg-brand-black">Scale Lead Generation</option>
                     <option value="brand" className="bg-brand-black">Dominant Branding</option>
+                    <option value="qualified-customers" className="bg-brand-black">Book More Qualified Customers</option>
+                    <option value="automation-booking" className="bg-brand-black">Business Automation / Booking Systems</option>
                     <option value="other" className="bg-brand-black">Other</option>
                   </select>
                 </div>
