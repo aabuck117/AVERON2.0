@@ -40,13 +40,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 };
   });
 
-  setIsSubmitting(false);
-  setIsSuccess(true);
-
-  setTimeout(() => {
-    setIsSuccess(false);
-  }, 5000);
-};
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden flex items-center justify-center">
