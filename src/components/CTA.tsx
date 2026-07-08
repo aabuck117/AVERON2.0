@@ -6,7 +6,7 @@ export function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
- const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   setIsSubmitting(true);
 
@@ -16,6 +16,28 @@ export function CTA() {
     method: "POST",
     body: formData,
     mode: "no-cors",
+  });
+
+  await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain" },
+    body: JSON.stringify({
+      fullName: formData.get("Full Name"),
+      company: formData.get("Company"),
+      email: formData.get("Business Email"),
+      objective: formData.get("Current Objective"),
+      additionalInfo: formData.get("Additional Information"),
+    }),
+  });
+
+  setIsSubmitting(false);
+  setIsSuccess(true);
+
+  setTimeout(() => {
+    setIsSuccess(false);
+  }, 5000);
+};
   });
 
   setIsSubmitting(false);
