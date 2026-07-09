@@ -12,11 +12,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   const formData = new FormData(e.currentTarget);
 
-  await fetch("https://tally.so/r/VLbl6M", {
-    method: "POST",
-    body: formData,
-    mode: "no-cors",
-  });
 
   await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
     method: "POST",
