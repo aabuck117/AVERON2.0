@@ -12,8 +12,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   const formData = new FormData(e.currentTarget);
 
-
-  await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
+ await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "text/plain" },
