@@ -6,34 +6,32 @@ export function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.currentTarget);
 
- await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain" },
-    body: JSON.stringify({
-      fullName: formData.get("Full Name"),
-      company: formData.get("Company"),
-      email: formData.get("Business Email"),
-      objective: formData.get("Current Objective"),
-      additionalInfo: formData.get("Additional Information"),
-    }),
-  });
+    await fetch("https://script.google.com/macros/s/AKfycbxcHdJz-nE9XuaSVgQDUAERTSKHeajAWKACBgbM16q5087ZfTJNCBsEzHdI2JXto5TH/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({
+        fullName: formData.get("Full Name"),
+        company: formData.get("Company"),
+        email: formData.get("Business Email"),
+        objective: formData.get("Current Objective"),
+        additionalInfo: formData.get("Additional Information"),
+      }),
+    });
 
-  setIsSubmitting(false);
-  setIsSuccess(true);
+    setIsSubmitting(false);
+    setIsSuccess(true);
 
-  setTimeout(() => {
-    setIsSuccess(false);
-  }, 5000);
-};
-  });
-
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 5000);
+  };
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden flex items-center justify-center">
@@ -123,10 +121,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Full Name</label>
-                   <input 
-  required 
-  name="Full Name"
-  type="text" 
+                    <input 
+                      required 
+                      name="Full Name"
+                      type="text" 
                       className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                       placeholder="JOHN DOE"
                     />
@@ -134,9 +132,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <div className="space-y-2">
                     <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Company</label>
                     <input 
-  required 
-  name="Company"
-  type="text" 
+                      required 
+                      name="Company"
+                      type="text" 
                       className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                       placeholder="ACME CORP"
                     />
@@ -145,10 +143,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Business Email</label>
-                <input 
-  required 
-  name="Business Email"
-  type="email" 
+                  <input 
+                    required 
+                    name="Business Email"
+                    type="email" 
                     className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm"
                     placeholder="john@example.com"
                   />
@@ -156,7 +154,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
                 <div className="space-y-2">
                   <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">Current Objective</label>
-                 <select required name="Current Objective" className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm appearance-none">
+                  <select required name="Current Objective" className="w-full bg-transparent border-b border-brand-line px-0 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm appearance-none">
                     <option value="" className="bg-brand-black text-brand-gray">Select Objective</option>
                     <option value="website" className="bg-brand-black">Website Overhaul</option>
                     <option value="leads" className="bg-brand-black">Scale Lead Generation</option>
@@ -166,18 +164,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     <option value="other" className="bg-brand-black">Other</option>
                   </select>
                 </div>
-<div className="space-y-2">
-  <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">
-    Additional Information
-  </label>
 
-  <textarea
-    name="Additional Information"
-    rows={4}
-    className="w-full bg-transparent border border-brand-line px-4 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm resize-none"
-    placeholder="Tell us more about your business, goals, current problems, etc."
-  />
-</div>
+                <div className="space-y-2">
+                  <label className="font-mono text-[10px] uppercase tracking-widest text-brand-gray/80">
+                    Additional Information
+                  </label>
+
+                  <textarea
+                    name="Additional Information"
+                    rows={4}
+                    className="w-full bg-transparent border border-brand-line px-4 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors font-body text-sm resize-none"
+                    placeholder="Tell us more about your business, goals, current problems, etc."
+                  />
+                </div>
+
                 <div className="pt-4">
                   <button 
                     disabled={isSubmitting}
